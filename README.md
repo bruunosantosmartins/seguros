@@ -24,39 +24,40 @@ Esta api funciona para gerar propostas personalizadas de acordo com o perfil do 
 
 ## Utilização
 
-A aplicação deve receber como entrada essas informações:
+A aplicação deve receber como entrada via POST essas informações:
 
 ##### input
 
 ```json
 {
-  "customer": {
-    "name": "João",
+    "name": "Bruno",
     "cpf": "123.456.789-10",
-    "age": 29,
-    "location": "BH",
-    "valor_veiculo": 70000
-  }
+    "age": 28,
+    "location": "SP",
+    "valor_veiculo": 170099
 }
 
 E a aplicação irá responder essas informações:
 
 ##### output
 
-```json
 {
-  "customer": {
-    "name": "João",
+    "name": "Bruno",
     "insurances": [
-      {
+        {
             "type": "basic",
-            "cost": 1400
+            "cost": 3401.98
         },
         {
             "type": "parcial",
-            "cost": 2100
+            "cost": 5102.97
+        },
+        {
+            "type": "total",
+            "cost": 6803.96
         }
     ]
-  }
 }
 ```
+
+URL - localhost:8080/seguros
